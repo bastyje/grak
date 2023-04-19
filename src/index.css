@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+html, body, canvas {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+canvas {
+  outline: none;
+  background-color: black;
+}
+
+nav {
+  padding: 10px 0;
+  background-color: black;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 20px;
+}
+
+.button-group > button {
+  height: 100%;
+  border: 2px solid white;
+  padding: 10px 30px;
+  font-family: 'Open Sans', sans-serif;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.button-group > button:hover {
+  background-color: white;
+  color: black;
+}
+
+main {
+  height: calc(100% - 70px);
+}

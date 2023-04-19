@@ -1,0 +1,21 @@
+{
+  "name": "camera",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "webpack",
+    "start": "NODE_ENV=development webpack serve"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  }
+}
