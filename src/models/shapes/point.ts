@@ -44,6 +44,7 @@ export class Point3D {
     this._realX = this._x;
     this._realY = this._y;
     this._realZ = this._z;
+    this._angleX = this._angleY = this._angleZ = 0;
   }
 
   public rotateX(angle: number): void {

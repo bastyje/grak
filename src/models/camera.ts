@@ -27,8 +27,6 @@ export default class Camera {
       const p1 = this.project(line.p1);
       const p2 = this.project(line.p2);
 
-      console.log(line.p1, line.p2);
-
       context.lineWidth = 2;
       context.lineCap = 'round';
       context.strokeStyle = 'white'
@@ -68,6 +66,7 @@ export default class Camera {
   private rotate(angle: number, axis: Axis): void {
     this._worldSpace.objects.forEach(object => {
       object.lines.forEach(line => {
+        console.log('b', line.p1, line.p2);
         switch (axis) {
           case Axis.X:
             line.p1.rotateX(angle);
@@ -82,6 +81,7 @@ export default class Camera {
             line.p2.rotateZ(angle);
             break;
         }
+        console.log('a', line.p1, line.p2);
       });
     });
   }
