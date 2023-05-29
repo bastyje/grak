@@ -1,9 +1,14 @@
 import Shape from '../interfaces/shape';
 import Line from './line';
 import { Point3D } from './point';
+import { Polygon } from './polygon';
 
 export default class Cuboid implements Shape {
   private readonly _lines: Line[];
+
+  public get polygons(): Polygon[] {
+    return [];
+  }
 
   public get lines(): Line[] {
     return this._lines;

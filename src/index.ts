@@ -1,28 +1,20 @@
-import WorldSpace from './models/world-space';
-import Camera from './models/camera';
-import { Point3D } from './models/shapes/point';
-import registerEvents from './events/register-events';
-import Cuboid from './models/shapes/cuboid';
-import setSize from './display/set-size';
-
+import changeTab from './events/change-tab';
+import Tab from './enums/tab.enum';
 
 
 const canvas = document.getElementById('root') as HTMLCanvasElement;
 if (canvas) {
+  changeTab(canvas, Tab.VirtualCamera);
 
-  const context = canvas.getContext('2d');
-  if (context) {
-    const world = new WorldSpace();
-    const camera = new Camera(world, context);
+  (document.getElementById('virtual-camera') as HTMLButtonElement).addEventListener('click', () => {
+    changeTab(canvas, Tab.VirtualCamera);
+  });
 
-    setSize(canvas, camera);
-    registerEvents(camera, canvas);
+  (document.getElementById('object-clipping') as HTMLButtonElement).addEventListener('click', () => {
+    changeTab(canvas, Tab.ObjectClipping);
+  });
 
-    world.add(new Cuboid(new Point3D(110, 200, 300), 100, 100, 100));
-    world.add(new Cuboid(new Point3D(110, 200, 420), 100, 50, 100));
-    world.add(new Cuboid(new Point3D(-10, 200, 300), 100, 200, 100));
-    world.add(new Cuboid(new Point3D(-10, 200, 420), 100, 100, 100));
-
-    camera.draw()
-  }
+  (document.getElementById('surface-display') as HTMLButtonElement).addEventListener('click', () => {
+    changeTab(canvas, Tab.SurfaceDisplay);
+  });
 }

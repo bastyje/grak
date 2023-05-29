@@ -5,6 +5,7 @@ const setSize = (canvas: HTMLCanvasElement, camera: Camera) => {
   canvas.width = domRect.width;
   canvas.height = domRect.height;
   camera.draw();
+  camera.drawSurfaces();
 };
 
 export default setSize;
